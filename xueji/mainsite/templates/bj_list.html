@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}学生列表{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="alert alert-warning">
+        你的名字：{{ username }}<br>你喜欢的颜色：{{ usercolor }}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" align="center">
+                    <h3>班级列表</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+         <div class="col-md-12">
+             <p><h3><kbd>一年级</kbd></h3></p>
+         </div>
+        {% for b in banji1 %}
+        <div class="col-md-2">
+            <h4><a href='{% url "s_list-url" b.name %}'>{{ b.name }}</a></h4>
+        </div>
+        {% endfor %}
+        <div class="col-md-12">
+            <p><h3><kbd>二年级</kbd></h3></p>
+        </div>
+        {% for b in banji2 %}
+        <div class="col-md-2">
+            <h4><a href='{% url "s_list-url" b.name %}'>{{ b.name }}</a></h4>
+        </div>
+        {% endfor %}
+         <p><h3>三年级</h3></p><br>
+         <table width="1000" border="1">
+                <tr bgcolor="#BCB5FD" align="center">
+                    {% for b in banji3 %}
+                    <td><h4><a href='{% url "s_list-url" b.name %}'>{{ b.name }}</a></h4></td>
+                    {% endfor %}
+                </tr>
+         </table><br>
+        <p><h3>四年级</h3></p><br>
+        <table width="1000" border="1">
+                <tr bgcolor="#BCB5FD" align="center">
+                    {% for b in banji4 %}
+                    <td><h4><a href='{% url "s_list-url" b.name %}'>{{ b.name }}</a></h4></td>
+                    {% endfor %}
+                </tr>
+        </table><br>
+        <p><h3>五年级</h3></p><br>
+        <table width="1000" border="1">
+                <tr bgcolor="#BCB5FD" align="center">
+                    {% for b in banji5 %}
+                    <td><h4><a href='{% url "s_list-url" b.name %}'>{{ b.name }}</a></h4></td>
+                    {% endfor %}
+                </tr>
+        </table><br>
+        <p><h3>六年级</h3></p><br>
+        <table width="1000" border="1">
+                <tr bgcolor="#BCB5FD" align="center">
+                    {% for b in banji6 %}
+                    <td><h4><a href='{% url "s_list-url" b.name %}'>{{ b.name }}</a></h4></td>
+                    {% endfor %}
+                </tr>
+        </table>
+    </div>
+</div>
+{% endblock %}

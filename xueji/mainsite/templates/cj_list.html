@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}成绩列表{% endblock %}
+{% block content %}
+<div class="container">
+     <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" align="center">
+                    <h3>{{ student }}的各科成绩</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        <table class="table-bordered table-hover" width="1000">
+            <tr class="warning" align="center">
+                <td><h3>姓名</h3></td>
+                <td><h3>语文</h3></td>
+                <td><h3>数学</h3></td>
+                <td><h3>英语</h3></td>
+                <td><h3>科学</h3></td>
+                <td><h3>音乐</h3></td>
+                <td><h3>美术</h3></td>
+                <td><h3>体育</h3></td>
+                <td><h3>信息</h3></td>
+            </tr>
+            <tr align="center">
+               <td><h4>{{ student }}</h4></td>
+               <td><h4>{{ chengji.yuwen }}</h4></td>
+               <td><h4>{{ chengji.shuxue }}</h4></td>
+               <td><h4>{{ chengji.yingyu }}</h4></td>
+               <td><h4>{{ chengji.kexue }}</h4></td>
+               <td><h4>{{ chengji.yinyue }}</h4></td>
+               <td><h4>{{ chengji.meishu }}</h4></td>
+               <td><h4>{{ chengji.tiyu }}</h4></td>
+               <td><h4>{{ chengji.xinxi }}</h4></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

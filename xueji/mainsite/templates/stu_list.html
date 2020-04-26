@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}学生列表{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" align="center">
+                    <h3>{{ banji }}学生的详细信息</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        {% for s in student %}
+        <div class="col-sm-12 col-md-6">
+            <div class='panel {%cycle "panel-primary" "panel-info" "panel-warning" "panel-success"%}'>
+                <div class="panel-heading">
+                    <table width="500">
+                        <tr>
+                            <td><a href='{% url "c_list-url" s.name %}'>{{ s.name }}</a></td>
+                            <td align="right">{{ s.banji }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="panel-body">
+                    <table width="500">
+                        <tr>
+                            <td>学号：{{ s.xuehao }}</td>
+                            <td align="right">性别：{{ s.xingbie }}</td>
+                        </tr>
+                        <tr>
+                            <td>生日：{{ s.birthday }}</td>
+                            <td align="right">籍贯：{{ s.jiguan }}</td>
+                        </tr>
+                        <tr>
+                            <td>家庭住址：{{ s.zhuzhi }}</td>
+                            <td align="right">电话：{{ s.phone }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

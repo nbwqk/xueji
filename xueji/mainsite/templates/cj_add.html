@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}添加成绩{% endblock %}
+{% block content %}
+<div class="container">
+    {% if message %}
+    <div class="alert alert-warning">{{ message }}</div>
+    {% endif %}
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <div class="panel">
+               <form name="my form" method="GET">
+                   <label for="user_s">学生：</label>
+                   <select id="user_s" name="user_s" size="1">
+                       {% for s in students %}
+                         <option value="{{ s.name }}">{{ s.name }}</option>
+                       {% endfor %}
+                   </select><br>
+                   <label for="user_t">班主任：</label>
+                   <select id="user_t" name="user_t" size="1">
+                       {% for t in teachers %}
+                         <option value="{{ t.name }}">{{ t.name }}</option>
+                       {% endfor %}
+                   </select><br>
+                   <label for="user_yuwen">语文：</label>
+                   <input id="user_yuwen" type="text" name="user_yuwen"><br>
+                   <label for="user_shuxue">数学：</label>
+                   <input id="user_shuxue" type="text" name="user_shuxue"><br>
+                   <label for="user_yingyu">英语：</label>
+                   <input id="user_yingyu" type="text" name="user_yingyu"><br>
+                   <label for="user_kexue">科学：</label>
+                   <input id="user_kexue" type="text" name="user_kexue"><br>
+                   <label for="user_yinyue">音乐：</label>
+                   <input id="user_yinyue" type="text" name="user_yinyue"><br>
+                   <label for="user_meishu">美术：</label>
+                   <input id="user_meishu" type="text" name="user_meishu"><br>
+                   <label for="user_tiyu">体育：</label>
+                   <input id="user_tiyu" type="text" name="user_tiyu"><br>
+                   <label for="user_xinxi">信息：</label>
+                   <input id="user_xinxi" type="text" name="user_xinxi"><br>
+                   <input type="submit",value="提交">
+                   <input type="reset",value="重填">
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

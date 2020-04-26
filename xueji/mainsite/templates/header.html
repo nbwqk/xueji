@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <div class="navbar-brand" align="center">
+             学籍系统
+        </div>
+    </div>
+    <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          {% if username %}
+          <li><a href="/admin">后台管理</a></li>
+          <li><a href="/s_add">添加学生</a> </li>
+          <li><a href="/s_list/505班">学生信息</a> </li>
+          <li><a href="/b_list">班级列表</a> </li>
+          <li><a href="/c_add">添加成绩</a> </li>
+          {% else %}
+          <li><a href="/login">登录</a> </li>
+          <li><a href="/contace">联络管理员</a> </li>
+          {% endif %}
+    </ul>
+</nav>
+</body>
+</html>
